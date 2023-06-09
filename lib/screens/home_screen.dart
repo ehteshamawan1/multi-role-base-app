@@ -10,6 +10,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String email = '', age = '';
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    email = sp.getString('email') ?? '';
+    age = sp.getString('age') ?? '';
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +39,34 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Email:'),
+                Text(email.toString()),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Age:'),
+                Text(age.toString()),
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
             InkWell(
               onTap: () async {
                 SharedPreferences sp = await SharedPreferences.getInstance();
                 sp.clear();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()));
               },
               child: Container(
                 decoration: BoxDecoration(

@@ -24,7 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 color: Colors.indigo,
                 child: const Center(
-                  child: Text('Click'),
+                  child: Text(
+                    'Click',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),

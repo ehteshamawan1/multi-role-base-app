@@ -23,12 +23,12 @@ class _SplashScreenState extends State<SplashScreen> {
     bool isLogin = sp.getBool('isLogin') ?? false;
 
     if (isLogin) {
-      Timer(const Duration(seconds: 5), () {
+      Timer(const Duration(seconds: 3), () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const HomeScreen()));
       });
     } else {
-      Timer(const Duration(seconds: 5), () {
+      Timer(const Duration(seconds: 3), () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const LoginScreen()));
       });

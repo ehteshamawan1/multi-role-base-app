@@ -20,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
+        automaticallyImplyLeading: false,
         centerTitle: true,
       ),
       body: Padding(
@@ -69,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 child: const Center(
                   child: Text(
-                    'Click',
+                    'Login',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

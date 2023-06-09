@@ -20,9 +20,11 @@ class _LoginScreenState extends State<LoginScreen> {
             InkWell(
               onTap: () async {},
               child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.indigo,
+                    borderRadius: BorderRadius.circular(15)),
                 height: 50,
                 width: double.infinity,
-                color: Colors.indigo,
                 child: const Center(
                   child: Text(
                     'Click',
